@@ -12,7 +12,7 @@ class Employee:
         self.id = id
         self.name = name
         self.job_title = job_title
-        self.department_id = department_id
+        self.department_id = int(department_id)
 
     def __repr__(self):
         return (
