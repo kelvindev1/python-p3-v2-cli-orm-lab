@@ -102,7 +102,6 @@ def create_employee():
 
 def update_employee():
     id_ = input("Enter the employee's id: ")
-    employee = Employee.find_by_id(id_)
     if employee := Employee.find_by_id(id_):
         try :
             name = input("Enter the employee's new name: ")
@@ -110,7 +109,7 @@ def update_employee():
             job_title = input("Enter the employee's new job_title: ")
             employee.job_title = job_title
             department_id = input("Enter employee's new department_id: ")
-            employee.department_id = department_id
+            employee.department_id = int(department_id)
 
             employee.update()
             print(f'Success: {employee}')
